@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mees' portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <h2 class="small">Hi! my name is </h2>
+                <h3 class="big"> Mees Post </h3>
+            </div>
+            </h3>
+            <!-- <div class="container">
+                <img src="mees.JPG" alt="Mees Post" class="mees">
+            </div> -->
+            <div class="container">
+                <div>
+                    <p id="left-line-text">and I am a student at the ROC Midden Nederland in Amersfoort.
+                        with a passion for programming. In my first year of study, I have already gained many skills in
+                        various programming languages, including HTML, CSS, Javascript, and PHP.</p>
+                </div>
+
+                <div class="verticalLine"></div>
+                <div>
+                    <p id="right-line-text">
+                        Outside of my studies, I
+                        enjoy watching movies and TV series, listening to music, and playing games. I am primarily
+                        interested in Frontend, and I am enthusiastic about continuing to learn and master new
+                        skills in this field.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2 id="project-text">Projects</h2>
+            <ul class="projecten-lijst">
+                <li>
+                    <div class="project-kaart">
+                        <h3 class="project-titel">Technowire</h3>
+                        <i class="fa-brands fa-css3-alt fa-xl"></i>
+                        <small class="icons">HTML</small>
+                        <i class="fa-brands fa-html5 fa-xl"></i>
+                        <small class="icon">CSS</small>
+
+
+                        <p class="project-beschrijving">For a school project, I created a responsive website for a small
+                            company called Technowire. Technowire is a small company that aims to educate young adults
+                            about programming languages and their history.</p>
+                        <a href="http://576459.klas4s22.mid-ica.nl/technowire/" target="_blank"
+                            class="project-knop">View</a>
+                    </div>
+                    <div class="line-1"></div>
+                </li>
+                <li>
+                    <div class="project-kaart">
+                        <h3 class="project-titel">Memory</h3>
+                        <i class="fa-brands fa-css3-alt fa-xl"></i>
+                        <small class="icons">HTML</small>
+                        <i class="fa-brands fa-html5 fa-xl"></i>
+                        <small class="icon">CSS</small>
+                        <i class=" fa-bold fa-brands fa-js fa-xl"></i>
+                        <small class="icon">JavaScript</small>
+
+                        <p class="project-beschrijving">For a school project, I designed a memory game using HTML, CSS,
+                            and JavaScript. Players are challenged to match identical cards with each other.</p>
+                        <a href="http://576459.klas4s22.mid-ica.nl/game-level2/" target="_blank"
+                            class="project-knop">View
+                        </a>
+                    </div>
+                    <div class="line-1"></div>
+                </li>
+                <li>
+                    <div class="project-kaart">
+                        <h3 class="project-titel">De Blije Dobbelsteen</h3>
+                        <i class="fa-brands fa-css3-alt fa-xl"></i>
+                        <small class="icons">HTML</small>
+                        <i class="fa-brands fa-html5 fa-xl"></i>
+                        <small class="icon">CSS</small>
+                        <i class=" fa-bold fa-brands fa-js fa-xl"></i>
+                        <small class="icon">JavaScript</small>
+                        <p class="project-beschrijving">For a school project, I created a website for a company that
+                            produces board games and aims to attract young people through various games, including my
+                            own designed Memory game. </p>
+                        <a href="http://579571.klas4s22.mid-ica.nl/dobbelsteen/index.html" target="blank"
+                            class="project-knop">View</a>
+                    </div>
+                    <div class="line-1"></div>
+                </li>
+                <li>
+                    <div class="project-kaart">
+                        <h3 class="project-titel">Guestbook</h3>
+                        <i class="fa-brands fa-css3-alt fa-xl"></i>
+                        <small class="icons">HTML</small>
+                        <i class="fa-brands fa-html5 fa-xl"></i>
+                        <small class="icon">CSS</small>
+                        <i class=" fa-bold fa-brands fa-js fa-xl"></i>
+                        <small class="icon">JavaScript</small>
+                        <i class="fa fa-bold fa-brands fa-php fa-xl"></i>
+                        <small class="icon">PHP</small>
+                        <p class="project-beschrijving">For a school project, I created a Guestbook where anyone can
+                            post and edit their message. and this was my firtst project using PHP.
+                        </p>
+                        <a href="http://576459.klas4s22.mid-ica.nl/PHP-Guestbook/" target="blank"
+                            class="project-knop">View</a>
+                    </div>
+                    <div class="line-1"></div>
+
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Resume</h2>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <form id="form" action="contact.php" method="POST">
+                <label for="naam">Name</label>
+                <input placeholder="John Doe" type="text" id="naam" name="naam" />
+
+                <label for="email">E-mail</label>
+                <input placeholder="johndoe@example.com" type="email" id="email" name="email" />
+
+                <label for="bericht">Message</label>
+                <textarea placeholder="Hello!" id="bericht" name="bericht" rows="5"></textarea>
+
+                <button type="submit">
+                    <Sect>Send</Sect>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer">&copy; 2023 -
+            All rights reserved</p>
+    </footer>
+</body>
+
+</html>

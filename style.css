@@ -1,0 +1,204 @@
+:root {
+  --nds-color-primary: #16324f;
+  --nds-color-secondary: #18435a;
+  --nds-color-background: #f4f9fc;
+  --nds-color-text: #111d4a;
+  --nds-color-link: #000000;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --link-color: #5a5d7a;
+  --nds-color-background-card: #e3f2fd;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--nds-color-text);
+  background-color: var(--nds-color-background);
+}
+
+.nav-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--nds-color-background);
+}
+
+.project-knop {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  transition: var(--transition);
+  color: var(--nds-color-link);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+.big {
+  font-size: 5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.small {
+  margin-top: 10%;
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: var(--nds-color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* 
+header {
+} */
+
+nav a {
+  color: var(--nds-color-primary);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.projecten-lijst {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+}
+
+.project-kaart {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: var(--nds-color-background);
+  color: var(--nds-color-text);
+}
+
+.line-1 {
+  height: 5px;
+  background: linear-gradient(
+    to bottom,
+    transparent 2px,
+    black 2px,
+    rgb(0, 85, 255) 3px,
+    transparent 3px
+  );
+}
+.page-header:after {
+  content: "";
+  transform-origin: bottom center;
+  position: absolute;
+  width: 1px;
+  height: 25vh;
+  left: 220px;
+  top: 100%;
+  background: var(--text);
+  opacity: 0.45;
+}
+.projecten-lijst {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.verticalLine {
+  height: 400px;
+  border-right: 1px solid #000900;
+  margin: 3%;
+}
+
+#head-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 9;
+  color: var(--nds-color-background);
+}
+
+.mees {
+  width: 20%;
+  transform: rotate(-0.25turn);
+  margin-left: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-line-text,
+.right-line-text {
+  margin: left 5%;
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+#project-text {
+  margin-top: 20%;
+}
