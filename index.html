@@ -47,7 +47,7 @@
         </section>
 
         <section>
-            <h2 id="project-text">Projects</h2>
+            <h2 class="H2" id="project-text">Projects</h2>
             <ul class="projecten-lijst">
                 <li>
                     <div class="project-kaart">
@@ -125,11 +125,16 @@
         </section>
 
         <section>
-            <h2>Resume</h2>
+            <h2 class="H2">Resumè</h2>
+            <div ontouchstart="">
+                <div class="button">
+                    <a href="Mees Post - Resume-site.pdf" target="_blank">Download </a>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2>Contact</h2>
+            <h2 class="H2">Contact</h2>
             <form id="form" action="contact.php" method="POST">
                 <label for="naam">Name</label>
                 <input placeholder="John Doe" type="text" id="naam" name="naam" />
@@ -140,9 +145,13 @@
                 <label for="bericht">Message</label>
                 <textarea placeholder="Hello!" id="bericht" name="bericht" rows="5"></textarea>
 
-                <button type="submit">
-                    <Sect>Send</Sect>
-                </button>
+                <div ontouchstart="">
+                    <div class="button">
+                        <a href="#">submit</a>
+                    </div>
+                </div>
+
+
             </form>
         </section>
     </main>
