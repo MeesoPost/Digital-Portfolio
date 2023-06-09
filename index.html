@@ -135,23 +135,20 @@
 
         <section>
             <h2 class="H2">Contact</h2>
-            <form id="form" class="form" action="contact.php" method="POST" action="contact.php">
+            <form id="form" class="form" action="contact.php" method="POST">
                 <label for="naam">Name</label>
-                <input placeholder="John Doe" type="text" id="naam" name="naam" />
+                <input placeholder="John Doe" type="text" id="naam" name="name" />
 
                 <label for="email">E-mail</label>
                 <input placeholder="johndoe@example.com" type="email" id="email" name="email" />
 
+                <label for="subject">Subject</label>
+                <input placeholder="Subject" type="text" id="subject" name="subject" />
+
                 <label for="bericht">Message</label>
-                <textarea placeholder="Hello!" id="bericht" name="bericht" rows="5"></textarea>
+                <textarea placeholder="Hello!" id="bericht" name="message" rows="5"></textarea>
 
-                <div ontouchstart="">
-                    <div class="button">
-                        <a href="#">submit</a>
-                    </div>
-                </div>
-
-
+                <input class="button" type="submit" name="commit" value="Send Comment">
             </form>
         </section>
     </main>
