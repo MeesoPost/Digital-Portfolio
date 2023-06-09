@@ -135,7 +135,9 @@
 
         <section>
             <h2 class="H2">Contact</h2>
-            <form id="form" class="form" action="contact.php" method="POST">
+
+            <form id="form" class="form">
+
                 <label for="naam">Name</label>
                 <input placeholder="John Doe" type="text" id="naam" name="name" />
 
@@ -148,7 +150,23 @@
                 <label for="bericht">Message</label>
                 <textarea placeholder="Hello!" id="bericht" name="message" rows="5"></textarea>
 
-                <input class="button" type="submit" name="commit" value="Send Comment">
+
+                <div id="message-container"></div>
+
+                <!-- 
+                <button class="button" type="submit" name="commit">
+                    <a href="contact.php">Send message</a>
+                </button>
+
+
+                <input class="button" type="submit" name="commit" value="Send Comment"> -->
+
+                <div ontouchstart="">
+                    <div class="button" id="mysubmit">
+                        <a>
+                            Send message
+                    </div>
+                </div>
             </form>
         </section>
     </main>
@@ -157,6 +175,49 @@
         <p id="footer">&copy; 2023 -
             All rights reserved</p>
     </footer>
+
+    <script>
+        document.getElementById("mysubmit").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const f = document.getElementById("form");
+            let fd = new FormData(f);
+            fetch("demo.php", {
+                method: "POST",
+                body: fd
+            }).then(response => {
+                return response.json();
+            }).then(data => {
+                console.log(data);
+
+                // Display message if form already submitted three times
+                if (data.status === 0 & data.message === "Maximum form submissions reached") {
+                    const messageContainer = document.getElementById("message-container");
+                    messageContainer.innerHTML = "<p class='error-message'>Maximum form submissions reached.</p>";
+                } else {
+                    // Clear the form
+                    clearFormFields(f);
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        });
+
+        function clearFormFields(form) {
+            const inputs = form.getElementsByTagName("input");
+            const textareas = form.getElementsByTagName("textarea");
+
+            for (let i = 0; i < inputs.length; i++) {
+                const input = inputs[i];
+                input.value = "";
+            }
+
+            for (let i = 0; i < textareas.length; i++) {
+                const textarea = textareas[i];
+                textarea.value = "";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,20 +1,30 @@
 <?php
 
-
-
-
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+// Start the session
+session_start();
+
+// Check if the form has already been submitted three times
+if (isset($_SESSION['form_submissions']) && $_SESSION['form_submissions'] >= 3) {
+    echo json_encode(["status" => 0, "message" => "Maximum form submissions reached"]);
+    exit();
+}
+
+// Increment the submission count in the session
+if (!isset($_SESSION['form_submissions'])) {
+    $_SESSION['form_submissions'] = 1;
+} else {
+    $_SESSION['form_submissions']++;
+}
+
+echo json_encode($_POST);
 $name = $_POST['name'];
 $Email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
-
-
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
@@ -45,33 +55,30 @@ try {
 
     $mail->Body = $body;
 
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    // //Content
-    // $mail->isHTML(true); //Set email format to HTML
-    // $mail->Subject = $subject;
+    //Content
+    $mail->isHTML(true); //Set email format to HTML
+    $mail->Subject = $subject;
 
-    // $body = "name: " . $name . "<br>";
-    // $body .= "Email: " . $Email . "<br>";
-    // $body .= "message: " . $message;
+    $body = "name: " . $name . "<br>";
+    $body .= "Email: " . $Email . "<br>";
+    $body .= "message: " . $message;
 
+    $result = ["status" => 0, "message" => ""];
+    if ($mail->send()) {
+        $result["status"] = 1;
+    } else {
+        $result["status"] = 0;
+        $result["message"] = $mail->ErrorInfo;
+    }
 
-    // // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    echo json_encode($result);
 
-
-
-    $mail->send();
-    echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $result["status"] = 0;
+    $result["message"] = $mail->ErrorInfo;
+    echo json_encode($result);
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="nl">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Refresh" content="0; url='http://576459.klas4s22.mid-ica.nl'" />
-    Automatische doorverwijzing met een vertraging van 0 seconden naar de opgegeven URL
